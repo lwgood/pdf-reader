@@ -1,0 +1,299 @@
+/* 苹果风格基础变量 */
+:root {
+    --primary-blue: #007AFF;
+    --light-bg: #F5F5F7;
+    --white: #FFFFFF;
+    --border-light: #E5E5EA;
+    --text-dark: #1C1C1E;
+    --text-gray: #8E8E93;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 容器样式 */
+.apple-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.apple-main {
+    margin-top: 16px;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    flex: 1;
+}
+
+/* 控制面板 */
+.control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.file-control {
+    flex: 1;
+    min-width: 200px;
+}
+
+.file-input-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.file-input-label:hover {
+    background-color: #0066CC;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.file-input-label input {
+    display: none;
+}
+
+/* 导航控制 */
+.navigation-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-indicator {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-dark);
+    min-width: 60px;
+    text-align: center;
+}
+
+.page-separator {
+    color: var(--text-gray);
+    margin: 0 4px;
+}
+
+/* 视图控制 */
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.zoom-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.zoom-display {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 13px;
+    font-weight: 400;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* 按钮样式 */
+.control-button {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.control-button:hover {
+    background-color: #F5F5F7;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* 预览区域 */
+.preview-area {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: #FAFAFA;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.empty-icon {
+    font-size: 64px;
+    color: var(--text-gray);
+    margin-bottom: 16px;
+}
+
+.empty-state h2 {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--text-dark);
+}
+
+.empty-state p {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-gray);
+}
+
+#pdf-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+#pdf-canvas {
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* 页脚样式 */
+.apple-footer {
+    margin-top: 16px;
+    padding: 16px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-gray);
+    letter-spacing: -0.01em;
+}
+
+.footer-divider {
+    color: #D2D2D7;
+    font-weight: 300;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .control-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .file-control {
+        width: 100%;
+    }
+    
+    .navigation-controls,
+    .view-controls {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .preview-area {
+        min-height: 65vh;
+        padding: 16px;
+    }
+    
+    .footer-text {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .footer-divider {
+        display: none;
+    }
+}
+
+/* 页脚链接样式 */
+.footer-link {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* 防止布局偏移 */
+.footer-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-text a {
+    position: relative;
+    top: -1px; /* 微调对齐 */
+}

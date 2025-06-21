@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF预览器</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/parrot.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+</head>
+<body>
+    <div class="apple-container">
+        <main class="apple-main">
+            <section class="control-panel">
+                <div class="file-control">
+                    <label for="pdf-input" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>选择PDF文件</span>
+                        <input type="file" id="pdf-input" accept=".pdf">
+                    </label>
+                </div>
+                
+                <div class="navigation-controls">
+                    <button id="prev-page" class="control-button">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="page-indicator">
+                        <span id="current-page">-</span>
+                        <span class="page-separator">/</span>
+                        <span id="total-pages">-</span>
+                    </div>
+                    <button id="next-page" class="control-button">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="view-controls">
+                    <div class="zoom-control">
+                        <button id="zoom-out" class="control-button">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <div class="zoom-display">
+                            <span id="zoom-percent">100%</span>
+                        </div>
+                        <button id="zoom-in" class="control-button">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    
+                    <button id="rotate" class="control-button">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    
+                    <button id="fit-width" class="control-button">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <section class="preview-area">
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>尚未选择文件</h2>
+                    <p>请上传PDF文件或拖放至此处</p>
+                </div>
+                
+                <div id="pdf-container">
+                    <canvas id="pdf-canvas"></canvas>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="apple-footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span>享受清晰流畅的预览体验</span>
+                    <span class="footer-divider">·</span>
+                    <span>Powered by <a href="https://github.com/lwgood" target="_blank" rel="noopener noreferrer" class="footer-link">ww</a></span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
